@@ -6,7 +6,7 @@ This project is a Babylon.js-based First-Person Shooter (FPS) game that includes
 ## Features
 
 ### Physics Engine
-The game integrates Babylon.js's physics engine to handle collisions, gravity, and other real-world physics behavior. It provides an immersive experience with realistic object interactions.
+The game integrates The Havok Babylon.js 6's physics engine to handle collisions, gravity, and other real-world physics behavior. It provides an immersive experience with realistic object interactions.
 
 ### Grenades and Explosions
 - **Grenade Creation**: Players can create grenades, setting them in motion with a given direction and speed.
