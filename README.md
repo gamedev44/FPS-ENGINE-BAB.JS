@@ -1,7 +1,7 @@
 # Babylon.js FPS Project
 
 ## Overview
-This project is a Babylon.js-based First-Person Shooter (FPS) game that includes various exciting features such as grenades, explosions, physics, and more. It showcases a live coding environment that allows players to experience real-time updates and changes.
+This project is a Babylon.js-based First-Person Shooter (FPS) game that includes various exciting features such as grenades, explosions, physics, and more.
 
 ## Features
 
