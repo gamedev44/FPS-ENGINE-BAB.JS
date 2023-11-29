@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0; /* Remove default margin */
+      }
+    </style>
+  </head>
+  <body>
+  </body>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      var firstImage = document.createElement("img");
+      firstImage.src =
+        "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/a3091797-6e2b-4cf4-89ab-d6d6fcd76912_scaled.jpg";
+      firstImage.style.width = "300%";
+      firstImage.style.height = "200%";
+      firstImage.style.position = "absolute";
+      firstImage.style.top = "-90";
+      firstImage.style.left = "0";
+      document.body.appendChild(firstImage);
+
+      var secondImage = document.createElement("img");
+      secondImage.src = "https://i.ibb.co/W68NQQJ/Screen-Shot-2020-05-27-at-11-46-28-PM.png";
+      secondImage.style.width = "50%";
+      secondImage.style.height = "50%";
+      secondImage.style.position = "absolute";
+      secondImage.style.left = "50%";
+      secondImage.style.top = window.innerHeight - secondImage.height + "px";
+      secondImage.style.transform = "translateX(-50%)"; // Center the image horizontally
+      document.body.appendChild(secondImage);
+
+      document.body.style.cursor = "none";
+
+      var paused = false;
+      document.onkeydown = function (e) {
+        if (e.keyCode === 27) {
+          paused = !paused;
+          if (paused) {
+            document.body.style.cursor = "auto";
+          } else {
+            document.body.style.cursor = "none";
+          }
+        }
+      };
+
+      document.onmousemove = function (e) {
+        if (paused) {
+          return;
+        }
+        firstImage.style.left = -(e.clientX - window.innerWidth / 2) + "px";
+        firstImage.style.top = -(e.clientY - window.innerHeight / 2) + "px";
+        
+        // Adjust the position of the second image based on the screen height
+        secondImage.style.top = window.innerHeight - secondImage.height + "px";
+
+        // Center the second image horizontally
+        secondImage.style.left = e.clientX - secondImage.width / 2 + "px";
+        
+        // Ensure the second image stays within the screen bounds
+        if (e.clientX < secondImage.width / 2) {
+          secondImage.style.left = "0px";
+        }
+        if (e.clientX > window.innerWidth - secondImage.width / 2) {
+          secondImage.style.left = window.innerWidth - secondImage.width + "px";
+        }
+        
+        // Adjust the position of the second image based on the screen width
+        if (e.clientY < secondImage.height / 2) {
+          secondImage.style.top = "0px";
+        }
+        if (e.clientY > window.innerHeight - secondImage.height / 2) {
+          secondImage.style.top = window.innerHeight - secondImage.height + "px";
+        }
+      };
+    });
+    // SCRIPT MADE AS AN EXAMPLE BY MR.ASTERISK
+  </script>
+</html>
